@@ -1,0 +1,199 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.tab__item {
+    padding: 10px;
+    border-bottom: 1px solid #5C5C5C;
+}
+
+.tab__item:hover {
+    cursor: default;
+    color: white;
+    background-color: #5C5C5C;
+    font-weight: 600;
+}
+
+.active {
+    cursor: default;
+    color: white;
+    font-weight: 600;
+}
+
+.btnToggle {
+    position: absolute;
+    left: 0px;
+    display: none;
+}
+
+.container {
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+.tab {
+    position: relative;
+    min-width: 100px;
+    background-color: #191718;
+    color: #e2e2e2;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main__body {
+    padding: 10px 100px 0px 100px;
+}
+
+.main__logo{
+    flex: 1;
+    text-align: center;
+}
+
+.main__introduce {
+    background-color: #EFEFEF;
+    padding: 20px 200px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.main__introduce h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.main__content {
+    display: flex;
+}
+
+.main__content__item_middle {
+    margin: 0px 40px;
+}
+
+.main__content__item h3 {
+    margin-bottom: 10px;
+}
+
+
+.main__content__item img {
+    float: left;
+}
+
+.footer {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 100px;
+    margin-top: 20px;
+    border-top: solid 2px #EEEEEE;
+    transform: translateY(-3px);
+}
+
+/* For button */
+.hiding {
+    animation: btnShow 0.5s ease forwards;
+}
+
+.showing {
+    animation: btnHide 0.5s ease forwards;
+}
+
+/* For tab */
+
+.hide {
+    animation: tabShow 0.5s ease forwards;
+}
+
+.show {
+    animation: tabHide 0.5s ease forwards;
+}
+
+@keyframes btnShow {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 100px;
+    }
+}
+
+
+@keyframes btnHide {
+    from {
+        left: 100px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes tabShow {
+    from {
+        left: -102px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+
+@keyframes tabHide {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -102px;
+    }
+}
+
+/*Tablet screen*/
+@media only screen and (min-width: 641px) and (max-width: 1007px) {
+    .main__introduce {
+        padding: 20px 80px;
+    }
+    .main__body {
+        padding: 10px 50px 0px 50px;
+    }
+    .main__content {
+        flex-direction: column;
+    }
+    .main__content__item_middle {
+        margin: 15px 0px;
+    }
+    .footer {
+        padding-left: 50px;
+    }
+}
+
+/*Phone screen*/
+@media only screen and (max-width: 641px) {
+    .main__introduce {
+        padding: 20px 30px;
+    }
+    .main__body {
+        padding: 10px 20px 0px 20px;
+    }
+    .main__content {
+        flex-direction: column;
+    }
+    .main__content__item_middle {
+        margin: 15px 0px;
+    }
+    .footer {
+        padding-left: 20px;
+    }
+    .tab {
+        position: absolute;
+        height: 100%;
+        left: -102px;
+    }
+    .btnToggle {
+        display: block !important;
+    }
+}
